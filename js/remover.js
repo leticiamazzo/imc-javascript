@@ -1,12 +1,10 @@
-const pacientes = document.querySelectorAll(".paciente");
-
 const tabela = document.querySelector("table");
 
-pacientes.forEach(paciente => {
-  tabela.addEventListener("dblclick", function() {
-    const td = event.target;
-    const tr = td.parentNode;
-    tr.remove();
-  });
+tabela.addEventListener("dblclick", function(event) {
+  event.target.parentNode.classList.add("fade-out");
+
+  setTimeout(function() {
+    event.target.parentNode.remove();
+  },300);
 });
 
