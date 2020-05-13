@@ -10,7 +10,6 @@ botaoAdicionar.addEventListener("click", function(event) {
   const trPaciente = criarTr(paciente);
 
   let erros = validarPaciente(paciente);  
-  console.log(erros);
   if (erros.length > 0) {
     mostrarMensagemErro(erros);
     return;
