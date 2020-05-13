@@ -92,6 +92,39 @@ function validarPaciente(paciente) {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //  ANTES DA REFATORAÇÃO
 // botaoAdicionar.addEventListener("click", function(event) {
 //   event.preventDefault();

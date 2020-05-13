@@ -1,11 +1,11 @@
-const pacientes = document.querySelectorAll(".paciente");
+const pacients = document.querySelectorAll(".paciente");
 
-for (let i = 0; i < pacientes.length; i++) {
-  const paciente = pacientes[i];
+for (let i = 0; i < pacients.length; i++) {
+  const pacient = pacients[i];
   
-  const peso = paciente.querySelector(".info-peso").textContent;
-  const altura = paciente.querySelector(".info-altura").textContent;
-  const tdImc = paciente.querySelector(".info-imc");
+  const peso = pacient.querySelector(".info-peso").textContent;
+  const altura = pacient.querySelector(".info-altura").textContent;
+  const tdImc = pacient.querySelector(".info-imc");
 
   let pesoValido = validarPeso(peso);
   let alturaValida = validarAltura(altura);
@@ -13,13 +13,13 @@ for (let i = 0; i < pacientes.length; i++) {
   if (!pesoValido) {
     pesoValido = false;
     tdImc.textContent = "Peso inválido";
-    paciente.classList.add("paciente-invalido");
+    pacient.classList.add("paciente-invalido");
   }
 
   if (!alturaValida) {
     alturaValida = false;
     tdImc.textContent = "Altura inválida";
-    paciente.classList.add("paciente-invalido");
+    pacient.classList.add("paciente-invalido");
   }
   
   if (pesoValido && alturaValida) {
