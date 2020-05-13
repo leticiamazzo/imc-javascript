@@ -9,9 +9,10 @@ botaoAdicionar.addEventListener("click", function(event) {
   
   const trPaciente = criarTr(paciente);
 
-  if (!validarPaciente(paciente)) {
-    paciente.peso.textContent = "Peso inválido";
-    console.log("peso inválido");
+  let erros = validarPaciente(paciente);  
+  console.log(erros);
+  if (erros.length > 0) {
+    mostrarMensagemErro(erros);
     return;
   }
 
@@ -20,6 +21,10 @@ botaoAdicionar.addEventListener("click", function(event) {
   tabela.appendChild(trPaciente);
 
   form.reset();
+
+  const ul = document.querySelector("#mensagens-erro");
+  ul.innerHTML = "";
+
 });
 
 function obterPaciente(form) {
@@ -55,12 +60,35 @@ function criarTd(dado, classe) {
   return novoDado;  
 }
 
+function mostrarMensagemErro(erros) {
+  const ul = document.querySelector("#mensagens-erro");
+  ul.innerHTML = "";
+  
+  erros.forEach(function(erro) {
+    let li = document.createElement("li");
+    li.textContent = erro;
+    ul.appendChild(li);
+  });
+}
+
 function validarPaciente(paciente) {
-  if(validarPeso(paciente.peso)) {
-    return true;
-  } else {
-    return false;
+  let erros = [];
+
+  if (paciente.nome.length == 0) {
+    erros.push("Preencha o campo nome")
   }
+  if(!validarPeso(paciente.peso)) {
+    erros.push("Coloque um peso válido");
+  }
+  
+  if(!validarAltura(paciente.altura)) {
+    erros.push("Coloque uma altura válida");
+  }
+  
+  if (paciente.gordura.length == 0) {
+    erros.push("Preencha o campo gordura")
+  }
+  return erros;
 }
 
 
