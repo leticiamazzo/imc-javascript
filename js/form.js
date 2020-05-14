@@ -4,27 +4,29 @@ botaoAdicionar.addEventListener("click", function(event) {
   event.preventDefault();
 
   const form = document.querySelector("#form-adiciona");
-
+ 
   const paciente = obterPaciente(form);
   
-  const trPaciente = criarTr(paciente);
-
   let erros = validarPaciente(paciente);  
   if (erros.length > 0) {
     mostrarMensagemErro(erros);
     return;
   }
-
-  const tabela = document.querySelector("#tabela-pacientes");
-
-  tabela.appendChild(trPaciente);
+  
+  adicionarPaciente(paciente);
 
   form.reset();
-
+  
   const ul = document.querySelector("#mensagens-erro");
   ul.innerHTML = "";
-
+  
 });
+
+function adicionarPaciente(paciente) {
+  const trPaciente = criarTr(paciente);
+  const tabela = document.querySelector("#tabela-pacientes");
+  tabela.appendChild(trPaciente);
+}
 
 function obterPaciente(form) {
   const dadosNovoPaciente = {
@@ -89,40 +91,6 @@ function validarPaciente(paciente) {
   }
   return erros;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //  ANTES DA REFATORAÇÃO
 // botaoAdicionar.addEventListener("click", function(event) {
