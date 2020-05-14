@@ -123,7 +123,6 @@ function validarPaciente(paciente) {
 //   novoPaciente.appendChild(novaAltura);
 //   novoPaciente.appendChild(novaGordura);
 //   novoPaciente.appendChild(novoImc);
-//   console.log(novoPaciente);
 
 //   const tabela = document.querySelector("#tabela-pacientes");
 
