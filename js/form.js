@@ -128,4 +128,3 @@ function validarPaciente(paciente) {
 
 //   tabela.appendChild(novoPaciente);
 // });
-

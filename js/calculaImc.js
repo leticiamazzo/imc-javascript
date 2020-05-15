@@ -42,7 +42,6 @@ for (let i = 0; i < pacients.length; i++) {
       return false;
     }
   }
-
 }
 
 function calculaImc(peso, altura) {
